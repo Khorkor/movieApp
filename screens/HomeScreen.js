@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   View,
   Text,
@@ -5,15 +6,14 @@ import {
   ScrollView,
   Platform,
 } from "react-native";
+import { styles } from "../theme";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import {
   Bars3CenterLeftIcon,
   MagnifyingGlassIcon,
 } from "react-native-heroicons/outline";
-import { styles } from "../theme";
-import TrendingMovies from "../components/trendingMovies";
-import { useState } from "react";
+import TrendingMovies from "../components/TrendingMovies";
 import MovieList from "../components/MovieList";
 
 const ios = Platform.OS == "ios";

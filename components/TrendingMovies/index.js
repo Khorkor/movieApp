@@ -11,7 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 
 let { width, height } = Dimensions.get("window");
 
-export default function TrendingMovies({ data }) {
+const TrendingMovies = ({ data }) => {
   const navigation = useNavigation();
   // this function will navigate to the Movie Screen with item/data
   const handleClick = () => {
@@ -34,13 +34,13 @@ export default function TrendingMovies({ data }) {
       />
     </View>
   );
-}
+};
 
 const MovieCard = ({ item, handleClick }) => {
   return (
     <TouchableWithoutFeedback onPress={() => handleClick(item)}>
       <Image
-        source={require("../assets/moviePoster1.png")}
+        source={require("../../assets/moviePoster1.png")}
         //   source={{uri:image500(item.poster_path)}}
         style={{
           width: width * 0.6,
@@ -51,3 +51,5 @@ const MovieCard = ({ item, handleClick }) => {
     </TouchableWithoutFeedback>
   );
 };
+
+export default TrendingMovies;
