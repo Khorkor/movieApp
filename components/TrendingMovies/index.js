@@ -8,13 +8,14 @@ import {
 import React from "react";
 import Carousel from "react-native-snap-carousel";
 import { useNavigation } from "@react-navigation/native";
+import { image500 } from "../../api/moviedb";
 
 let { width, height } = Dimensions.get("window");
 
 const TrendingMovies = ({ data }) => {
   const navigation = useNavigation();
-  // this function will navigate to the Movie Screen with item/data
-  const handleClick = () => {
+
+  const handleClick = (item) => {
     navigation.navigate("Movie", item);
   };
 
@@ -40,8 +41,7 @@ const MovieCard = ({ item, handleClick }) => {
   return (
     <TouchableWithoutFeedback onPress={() => handleClick(item)}>
       <Image
-        source={require("../../assets/moviePoster1.png")}
-        //   source={{uri:image500(item.poster_path)}}
+        source={{ uri: image500(item.poster_path) }}
         style={{
           width: width * 0.6,
           height: height * 0.4,
